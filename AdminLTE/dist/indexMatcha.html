@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Plugins -->
+<script src="../plugins_basic/jquery/jquery.min.js"></script>
+<script src="../plugins_basic/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../plugins_basic/overlayScrollbars/js/OverlayScrollbars.min.js"></script>
+
+<!-- Powerful Plugins -->
+<script src="../plugins_powerful/chartjs/chart.min.js"></script>
+<script src="../plugins_powerful/datatables/js/jquery.dataTables.min.js"></script>
+<script src="../plugins_powerful/sweetalert2/sweetalert2.all.min.js"></script>
+<script src="../plugins_powerful/moment/moment.min.js"></script>
+
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Matcha Espresso Fusion - Dashboard (Light)</title>
+
+<!-- local CSS first (adminlte wrapper + custom) -->
+<link rel="stylesheet" href="css/adminlte.min.css">
+<link rel="stylesheet" href="css/custom.css">
+
+<!-- icons (CDN) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+  <aside class="main-sidebar">
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+        <i class="bi bi-cup-hot-fill me-2" style="color:#4B3A2E;"></i>
+        Matcha Espresso Fusion
+      </a>
+    <nav class="mt-4">
+      <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link text-white" href="#"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#"><i class="bi bi-list-ul me-2"></i>Products</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#"><i class="bi bi-people me-2"></i>Customers</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#"><i class="bi bi-gear me-2"></i>Settings</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <div class="content-wrapper">
+    <nav class="navbar navbar-light bg-white mb-3 shadow-sm">
+      <div class="container-fluid">
+        <a href="#" class="navbar-brand">Dashboard</a>
+        <div><button class="btn btn-outline-secondary" data-widget="pushmenu"><i class="bi bi-list"></i></button></div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <div class="small-box bg-bottle p-3">
+            <div class="inner"><h3>120</h3><p>Orders Today</p></div>
+            <div class="icon"><i class="bi bi-cart"></i></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="small-box bg-peanut p-3">
+            <div class="inner"><h3>Rp 2.5M</h3><p>Monthly Revenue</p></div>
+            <div class="icon"><i class="bi bi-currency-dollar"></i></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="small-box bg-matcha p-3">
+            <div class="inner"><h3>350</h3><p>Active Members</p></div>
+            <div class="icon"><i class="bi bi-people"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="card">
+            <div class="card-header bg-bottle text-white"><h5 class="card-title">Sales Overview</h5></div>
+            <div class="card-body"><canvas id="salesChart" height="200"></canvas></div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-header bg-peanut text-white"><h5 class="card-title">Top Products</h5></div>
+            <div class="card-body p-0">
+              <table class="table table-striped mb-0">
+                <thead><tr><th>Product</th><th>Sales</th></tr></thead>
+                <tbody>
+                  <tr><td>Matcha Latte</td><td>250</td></tr>
+                  <tr><td>Espresso Fusion</td><td>190</td></tr>
+                  <tr><td>Cold Brew</td><td>130</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-3">
+        <div class="card-body">
+          <h5>Menu Stock</h5>
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead><tr><th>Item</th><th>Category</th><th>Stock</th><th>Price</th></tr></thead>
+              <tbody>
+                <tr><td>Matcha Latte</td><td>Hot</td><td>24</td><td>$3.50</td></tr>
+                <tr><td>Espresso Fusion</td><td>Hot</td><td>18</td><td>$3.80</td></tr>
+                <tr><td>Cold Brew</td><td>Cold</td><td>12</td><td>$4.00</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <footer class="main-footer mt-4">© 2025 Matcha Espresso Fusion</footer>
+    </div>
+  </div>
+</div>
+
+<!-- CDN libs (required) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- local adminlte-like behaviour + chart init -->
+<script src="js/adminlte.min.js"></script>
+<script src="js/chart.js"></script>
+<script>
+  // Sales chart (example data)
+  const ctx = document.getElementById('salesChart');
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+      datasets: [{ label:'Sales', data:[12,19,7,15,22,13,17], borderColor:'#4B6043', backgroundColor:'rgba(75,96,67,0.12)' }]
+    },
+    options: { responsive:true }
+  });
+</script>
+</body>
+</html>
