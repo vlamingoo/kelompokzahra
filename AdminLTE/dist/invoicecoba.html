@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SOURI</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+    />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0/css/adminlte.min.css" />
+    <style>
+      @media print {
+        .main-header,
+        .main-sidebar,
+        .main-footer,
+        .no-print {
+          display: none !important;
+        }
+        .content-wrapper {
+          margin-left: 0 !important;
+        }
+        body {
+          background: #fff !important;
+        }
+        .invoice {
+          box-shadow: none !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+      <!-- Navbar -->
+      <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"
+              ><i class="fas fa-bars"></i
+            ></a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+              <i class="fas fa-expand-arrows-alt"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Sidebar -->
+      <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <a href="starter.html" class="brand-link">
+          <img
+            src="SOURI.webp"
+            alt="AdminLTE Logo"
+            class="brand-image img-circle elevation-3"
+            style="opacity: 0.8"
+          />
+          <span class="brand-text font-weight-light">SOURI</span>
+        </a>
+
+        <div class="sidebar">
+          <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+              <img
+                src="yaisan.jpg"
+                class="img-circle elevation-2"
+                alt="User Image"
+              />
+            </div>
+            <div class="info">
+              <a href="#" class="d-block">Khairunissa Azzahra</a>
+            </div>
+          </div>
+
+          <nav class="mt-2">
+            <ul
+              class="nav nav-pills nav-sidebar flex-column"
+              data-widget="treeview"
+              role="menu"
+              data-accordion="false"
+            >
+              <li class="nav-item">
+                <a href="starter.html" class="nav-link">
+                  <i class="nav-icon fas fa-home"></i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="invoicecoba.html" class="nav-link active">
+                  <i class="nav-icon fas fa-book"></i>
+                  <p>Invoice</p>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Content Wrapper -->
+      <div class="content-wrapper">
+        <section class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1>Invoice</h1>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Invoice -->
+        <section class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <div class="invoice p-3 mb-3" id="invoice-content">
+                  <!-- title row -->
+                  <div class="row">
+                    <div class="col-12">
+                      <h4>
+                        <i class="fas fa-shopping-cart"></i> SOURI.BKK
+                        <small class="float-right">Date: 05/10/2025</small>
+                      </h4>
+                    </div>
+                  </div>
+
+                  <!-- info row -->
+                  <div class="row invoice-info">
+                    <div class="col-sm-4 invoice-col">
+                      From
+                      <address>
+                        <strong>SOURI, Admin.</strong><br />
+                        52 Si Lom Rd, Suriya Wong,<br />
+                        Bang Rak, Bangkok 10500,<br />
+                        Thailand<br />
+                        Phone: (+66) 1315-2078<br />
+                        Email: marketing@souribkk.com
+                      </address>
+                    </div>
+                    <div class="col-sm-4 invoice-col">
+                      To
+                      <address>
+                        <strong>SM Entertainment</strong><br />
+                        83-21, Wangsimni-ro<br />
+                        Seongdong-gu, Seoul<br />
+                        Korea Selatan<br />
+                        Phone: (+82) 4931-1431<br />
+                        Email: SMEnt@Kwangya.com
+                      </address>
+                    </div>
+                    <div class="col-sm-4 invoice-col">
+                      <b>Invoice #ISE12</b><br />
+                      <b>Order ID:</b> E490S<br />
+                      <b>Payment Due:</b> 05/10/2025<br />
+                      <b>Account:</b> 6587-2044
+                    </div>
+                  </div>
+
+                  <!-- Table row -->
+                  <div class="row">
+                    <div class="col-12 table-responsive">
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th>Qty</th>
+                            <th>Product</th>
+                            <th>Serial #</th>
+                            <th>Description</th>
+                            <th>Subtotal</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>Hokaido Milk Fatcaron</td>
+                            <td>FS-6709</td>
+                            <td>Hokkaido milk with white chocolate ganache</td>
+                            <td>฿100</td>
+                          </tr>
+                          <tr>
+                            <td>1</td>
+                            <td>Cookie and Cream Fatcaron</td>
+                            <td>FS-6709</td>
+                            <td>Oreo cream cheese with an Oreo biscuit</td>
+                            <td>฿90</td>
+                          </tr>
+                          <tr>
+                            <td>1</td>
+                            <td>Red Velvet Cake</td>
+                            <td>FS-8544</td>
+                            <td>Signature vanilla cream cheese</td>
+                            <td>฿2.690</td>
+                          </tr>
+                          <tr>
+                            <td>1</td>
+                            <td>Wishper of The Moon Collection</td>
+                            <td>FS-6341</td>
+                            <td>
+                              Chocolate hazelnut mooncake 1 piece <br />
+                              Lemon pie mooncake 1 piece <br />
+                              Thai Tea Sesame mooncake 1 piece <br />
+                              Purple sweet potato & salted egg mooncake 1 piece
+                              <br />
+                              Durian Custard mooncake 1 piece <br />
+                              Red Velvet Creamcheese mooncake 1 piece <br />
+                              Moonlit Bunny 2 pieces <br />
+                            </td>
+                            <td>฿1.099</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-6">
+                      <p class="lead">Payment Methods:</p>
+                      <img src="assets/img/brimo.png" alt="BRImo" style="height: 30px; margin-right: 8px;" />
+                      <img src="assets/img/livin by mandiri.png" alt="Livin by Mandiri" style="height: 30px; margin-right: 8px;" />
+                      <img src="assets/img/bsi.png" alt="BSI" style="height: 30px; margin-right: 8px;" />
+                      <img src="assets/img/bsi.png" alt="BNI" style="height: 30px;" />
+
+                      <p class="text-muted well well-sm shadow-none" style="margin-top: 10px">
+                        Thank you for your purchase products from SOURI! <br />
+                        We are happy to serve you.
+                      </p>
+                    </div>
+                    <div class="col-6">
+                      <p class="lead">Amount Due 05/10/2025</p>
+                      <div class="table-responsive">
+                        <table class="table">
+                          <tr><th style="width: 50%">Subtotal:</th><td>฿193.789</td></tr>
+                          <tr><th>Tax (5%)</th><td>฿30</td></tr>
+                          <tr><th>Shipping:</th><td>฿15</td></tr>
+                          <tr><th>Total:</th><td>฿238.789</td></tr>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Buttons -->
+                  <div class="row no-print">
+                    <div class="col-12">
+                      <button type="button" class="btn btn-default" onclick="window.print()">
+                        <i class="fas fa-print"></i> Print
+                      </button>
+                      <button type="button" class="btn btn-success float-right" style="margin-right: 5px" id="generatePDF">
+                        <i class="fas fa-download"></i> Generate PDF
+                      </button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <footer class="main-footer text-center">
+        <strong>Copyright &copy; 2025 <a href="https://tr.ee/qC8kZzhUvn">SOURI</a>.</strong>
+        Your Smile Is Our Favorite.
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0/js/adminlte.min.js"></script>
+    
+    <!-- Library untuk PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <script>
+      document.getElementById('generatePDF').addEventListener('click', function() {
+        const button = this;
+        const originalHTML = button.innerHTML;
+        
+        button.disabled = true;
+        button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
+        
+        const invoice = document.getElementById('invoice-content');
+        const cloneInvoice = invoice.cloneNode(true);
+        
+        // Hapus button dari clone
+        const buttons = cloneInvoice.querySelector('.no-print');
+        if (buttons) {
+          buttons.remove();
+        }
+        
+        // Ganti gambar payment dengan div berwarna (untuk menghindari CORS)
+        const paymentImgs = cloneInvoice.querySelectorAll('img[src*="brimo"], img[src*="livin"], img[src*="bsi"], img[src*="bni"]');
+        paymentImgs.forEach(img => {
+          const div = document.createElement('div');
+          div.style.cssText = 'display: inline-block; height: 30px; padding: 5px 12px; margin-right: 8px; border-radius: 4px; color: white; font-weight: bold; font-size: 11px; line-height: 20px; text-align: center; vertical-align: middle;';
+          
+          if (img.alt.includes('BRImo')) {
+            div.style.background = '#0046BE';
+            div.textContent = 'BRImo';
+          } else if (img.alt.includes('Livin')) {
+            div.style.background = '#003d7a';
+            div.textContent = 'Livin';
+          } else if (img.alt.includes('BSI')) {
+            div.style.background = '#00923f';
+            div.textContent = 'BSI';
+          } else if (img.alt.includes('BNI')) {
+            div.style.background = '#F57C00';
+            div.textContent = 'BNI';
+          }
+          
+          img.parentNode.replaceChild(div, img);
+        });
+        
+        const tempContainer = document.createElement('div');
+        tempContainer.style.cssText = 'position: absolute; left: -9999px; top: 0; width: 900px; background: white; padding: 20px;';
+        tempContainer.appendChild(cloneInvoice);
+        document.body.appendChild(tempContainer);
+        
+        setTimeout(() => {
+          html2canvas(cloneInvoice, {
+            scale: 2,
+            useCORS: false,
+            allowTaint: true,
+            logging: false,
+            backgroundColor: '#ffffff',
+            windowWidth: 900,
+            onclone: function(clonedDoc) {
+              // Fix untuk layout table agar serial # tidak turun
+              const clonedInvoice = clonedDoc.querySelector('#invoice-content');
+              if (clonedInvoice) {
+                // Set min-width untuk kolom-kolom agar tidak terlalu sempit
+                const style = clonedDoc.createElement('style');
+                style.textContent = `
+                  table { table-layout: fixed; width: 100%; }
+                  th:nth-child(1), td:nth-child(1) { width: 8%; min-width: 50px; }
+                  th:nth-child(2), td:nth-child(2) { width: 22%; min-width: 140px; }
+                  th:nth-child(3), td:nth-child(3) { width: 12%; min-width: 80px; white-space: nowrap; }
+                  th:nth-child(4), td:nth-child(4) { width: 43%; min-width: 250px; }
+                  th:nth-child(5), td:nth-child(5) { width: 15%; min-width: 90px; text-align: left; }
+                `;
+                clonedDoc.head.appendChild(style);
+              }
+            }
+          }).then(canvas => {
+            document.body.removeChild(tempContainer);
+            
+            const imgData = canvas.toDataURL('image/jpeg', 0.98);
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF('p', 'mm', 'a4');
+            
+            const pdfWidth = 210;
+            const pdfHeight = 297;
+            const imgWidth = pdfWidth;
+            const imgHeight = (canvas.height * pdfWidth) / canvas.width;
+            
+            let heightLeft = imgHeight;
+            let position = 0;
+            
+            pdf.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);
+            heightLeft -= pdfHeight;
+            
+            while (heightLeft > 0) {
+              position = heightLeft - imgHeight;
+              pdf.addPage();
+              pdf.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);
+              heightLeft -= pdfHeight;
+            }
+            
+            pdf.save('SOURI-Invoice-ISE12.pdf');
+            
+            button.disabled = false;
+            button.innerHTML = originalHTML;
+            
+          }).catch(error => {
+            console.error('Error:', error);
+            if (document.body.contains(tempContainer)) {
+              document.body.removeChild(tempContainer);
+            }
+            alert('Terjadi kesalahan saat membuat PDF. Gunakan tombol Print sebagai alternatif.');
+            button.disabled = false;
+            button.innerHTML = originalHTML;
+          });
+        }, 200);
+      });
+    </script>
+  </body>
+</html>
