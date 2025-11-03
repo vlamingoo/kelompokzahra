@@ -93,7 +93,7 @@
                 </div>
                 <br><br>
                 <i class="bi bi-cup-hot small-box-icon" style="font-size:40px; opacity:0.8; position:absolute; bottom:15px; right:20px;"></i>
-                <a href="#" class="small-box-footer text-white" style="background:rgba(255,255,255,0.2);border-radius:0 0 12px 12px;">More info <i class="bi bi-link-45deg"></i></a>
+                <a href="#" onclick="showInfo('coffee')" class="small-box-footer text-white" style="background:rgba(255,255,255,0.2);border-radius:0 0 12px 12px;">More info <i class="bi bi-link-45deg"></i></a>
               </div>
             </div>
 
@@ -105,7 +105,7 @@
                 </div>
                 <br><br>
                 <i class="bi bi-cake2 small-box-icon" style="font-size:40px; opacity:0.8; position:absolute; bottom:15px; right:20px;"></i>
-                <a href="#" class="small-box-footer text-dark" style="background:rgba(255,255,255,0.4);">More info <i class="bi bi-link-45deg"></i></a>
+                <a href="#" onclick="showInfo('dessert')" class="small-box-footer text-dark" style="background:rgba(255,255,255,0.4);">More info <i class="bi bi-link-45deg"></i></a>
               </div>
             </div>
 
@@ -117,7 +117,7 @@
                 </div>
                 <br><br>
                 <i class="bi bi-people-fill small-box-icon" style="font-size:40px; opacity:0.8; position:absolute; bottom:15px; right:20px;"></i>
-                <a href="#" class="small-box-footer text-white" style="background:rgba(255,255,255,0.2);">More info <i class="bi bi-link-45deg"></i></a>
+                <a href="#" onclick="showInfo('customer')" class="small-box-footer text-white" style="background:rgba(255,255,255,0.2);">More info <i class="bi bi-link-45deg"></i></a>
               </div>
             </div>
 
@@ -129,7 +129,7 @@
                 </div>
                 <br><br>
                 <i class="bi bi-cart-check small-box-icon" style="font-size:40px; opacity:0.8; position:absolute; bottom:15px; right:20px;"></i>
-                <a href="#" class="small-box-footer text-white" style="background:rgba(255,255,255,0.2);">More info <i class="bi bi-link-45deg"></i></a>
+                <a href="#" onclick="showInfo('order')" class="small-box-footer text-white" style="background:rgba(255,255,255,0.2);">More info <i class="bi bi-link-45deg"></i></a>
               </div>
             </div>
           </div>
@@ -197,5 +197,58 @@
     };
     new ApexCharts(document.querySelector("#customer-chart"), optionsCustomer).render();
   </script>
+
+  <script>
+  function showInfo(type) {
+    let title = "";
+    let text = "";
+    let icon = "";
+    let color = "";
+
+    switch (type) {
+      case "coffee":
+        title = "Coffee Update!";
+        text = "Penjualan kopi meningkat 15% minggu ini! Varian latte paling populer.";
+        icon = "success";
+        color = "#7d4ac7";
+        break;
+      case "dessert":
+        title = "Dessert Time!";
+        text = "Dessert paling laku: Strawberry Cheesecake. Stok baru masuk hari ini!";
+        icon = "info";
+        color = "#d4af37";
+        break;
+      case "customer":
+        title = "New Customers!";
+        text = "Ada 58 pelanggan baru bulan ini! Mayoritas dari program loyalti.";
+        icon = "question";
+        color = "#b5179e";
+        break;
+      case "order":
+        title = "Pending Orders!";
+        text = "Ada 12 pesanan tertunda. Pastikan semua sudah dikonfirmasi sebelum malam ini!";
+        icon = "warning";
+        color = "#ff80ab";
+        break;
+    }
+
+    Swal.fire({
+      title: title,
+      text: text,
+      icon: icon,
+      confirmButtonColor: color,
+      confirmButtonText: "Oke",
+      background: "#fff8fb",
+      color: "#4b2c82",
+      showClass: {
+        popup: "animate__animated animate__fadeInDown"
+      },
+      hideClass: {
+        popup: "animate__animated animate__fadeOutUp"
+      }
+    });
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
