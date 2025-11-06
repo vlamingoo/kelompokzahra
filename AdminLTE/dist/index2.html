@@ -15,6 +15,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@1.13.1/css/OverlayScrollbars.min.css">
   <!-- AdminLTE -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
+  <!-- ChartJS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- FullCalendar CSS -->
+  <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.css' rel="stylesheet" />
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -414,13 +418,13 @@
             </div>
             <!-- /.card -->
       
-              <div class="col-md-8">
+              <div class="col-md-12">
               <div class="card card-success">
                 <div class="card-header">
                   <h3 class="card-title">Calendar</h3>
                 </div>
                 <div class="card-body">
-                  <div id="calendar"></div>
+                  <div id="calendar"  style="width: 100%; height: 300px;"></div>
                 </div>
               </div>
             </div>
@@ -646,54 +650,62 @@
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- FullCalendar -->
 <script src="plugins/moment/moment.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.js'></script>
 
 <script>
-$(function () {
-  // Data untuk Pie & Donut Chart
-  var browserData = {
-    labels: [
-      'Sparepart',
-      'Oli',
-      'Aksesori,',
-      'Body & Cat',
-      'Ban & Velg',
-      'Alat Servis / Tools'
-    ],
+document.addEventListener('DOMContentLoaded', function() {
+  // Data untuk Donut Chart
+  var donutData = {
+    labels: ['Sparepart','Oli','Aksesori','Body & Cat','Ban & Velg','Alat Servis / Tools'],
     datasets: [{
-      data: [35, 25, 15, 10, 8, 7],
-      backgroundColor: [
-        '#f56954', // Chrome
-        '#00a65a', // IE
-        '#f39c12', // FireFox
-        '#00c0ef', // Safari
-        '#3c8dbc', // Opera
-        '#d2d6de'  // Navigator
-      ]
+      data: [35,25,15,10,8,7],
+      backgroundColor: ['#f56954','#00a65a','#f39c12','#00c0ef','#3c8dbc','#d2d6de']
     }]
   };
 
-
-  // Donut Chart
-  var donutChartCanvas = $('#donutChart').get(0).getContext('2d');
-  var donutChart = new Chart(donutChartCanvas, {
+  // Inisialisasi Donut Chart
+  var donutChartCanvas = document.getElementById('donutChart').getContext('2d');
+  new Chart(donutChartCanvas, {
     type: 'doughnut',
-    data: browserData,
+    data: donutData,
     options: {
       maintainAspectRatio: false,
       responsive: true,
-      cutout: '70%' 
+      cutout: '70%',
+      plugins: {
+        legend: {
+          display: false
+        }
+      }
     }
   });
 });
+</script>
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth'
-    });
-    calendar.render();
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var calendarEl = document.getElementById('calendar');
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'dayGridMonth',
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'dayGridMonth,timeGridWeek,timeGridDay'
+    },
+    themeSystem: 'bootstrap',
+    height: 300,
+    aspectRatio: 2.5,
+    events: [
+      {
+        title: 'Meeting',
+        start: '2025-11-04',
+        backgroundColor: '#f56954'
+      }
+    ],
+    height: 450
   });
+  calendar.render();
+});
 </script>
 
 <!-- REQUIRED SCRIPTS -->
